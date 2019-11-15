@@ -1,0 +1,108 @@
+package Project.Main;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.image.BufferedImage;
+
+import javax.swing.JPanel;
+
+//TODO remove keyboard controls
+
+@SuppressWarnings("serial")
+public class GamePanel extends JPanel implements Runnable,KeyListener
+{
+	public static final int WIDTH = 800;
+	public static final int HEIGHT = 600;
+	
+	public boolean isRunning = false;
+	
+	Thread gameThread;
+	BufferedImage image;
+	Graphics2D g;
+	
+	
+	public GamePanel()
+	{
+		setPreferredSize(new Dimension (WIDTH,HEIGHT));
+		setFocusable(true);
+		requestFocus();
+	}
+	
+	public void init()
+	{
+		isRunning = true;
+		image = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
+		g = (Graphics2D) image.getGraphics();
+	}
+	
+	public void addNotify()
+	{
+		super.addNotify();
+		
+		if(gameThread == null)
+		{
+			gameThread = new Thread(this);
+			addKeyListener(this);
+			gameThread.start();
+		}
+		
+	}
+
+	public void run() 
+	{
+		init();
+		
+		while(isRunning)
+		{
+			render();
+		}
+
+	}
+	
+	public void render()
+	{
+		Graphics g2 = getGraphics();
+		
+		
+		
+		g.setColor(Color.white);
+		g.drawString("TEST", 50, 50);
+		
+		g2.drawImage(image, 0,0, WIDTH,HEIGHT,null);
+		g2.dispose();
+		
+	}
+	
+	public void update()
+	{
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) 
+	{
+		if(e.getKeyCode() == e.VK_UP)
+		{
+			System.out.println("RAN");
+		}
+		
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+}

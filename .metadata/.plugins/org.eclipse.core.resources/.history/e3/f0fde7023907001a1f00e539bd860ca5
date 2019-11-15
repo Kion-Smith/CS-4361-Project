@@ -1,0 +1,12 @@
+package Project.Main;
+
+import javax.swing.JPanel;
+
+@SuppressWarnings("serial")
+public class GamePanel extends JPanel
+{
+	public GamePanel()
+	{
+		setPreferredSize(800,600);
+	}
+}
