@@ -7,8 +7,11 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
 
 import javax.swing.JPanel;
+
+import Project.Screen.World;
 
 //TODO remove keyboard controls
 
@@ -24,6 +27,7 @@ public class GamePanel extends JPanel implements Runnable,KeyListener
 	BufferedImage image;
 	Graphics2D g;
 	
+	World w;
 	
 	public GamePanel()
 	{
@@ -34,6 +38,11 @@ public class GamePanel extends JPanel implements Runnable,KeyListener
 	
 	public void init()
 	{
+		//File f = new File(this.getClass().getResource("/Resources").toString());
+		//File f = new File(this.class.getResourceAsStream("../Resources/WorldMap.txt").toString());
+		System.out.println(this.getClass().getResource("").toString());
+		//File f = new File("/Resources/WorldMap.txt");
+		//w = new World(f);
 		isRunning = true;
 		image = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 		g = (Graphics2D) image.getGraphics();
