@@ -20,6 +20,10 @@ public class Sprites
 	public static Sprites tex5 = new Sprites(path+"/door.png");
 	
 	public static Sprites tex4 = new Sprites(path+"/zombie.png");
+	//mega zombie add?
+	
+	public static Sprites tex6 = new Sprites(path+"/megaZombie.png");
+
 	
 	public Sprites(String s)
 	{

@@ -1,10 +1,12 @@
 package Entity;
 
+//Custom vector class so that we can easily store vectors instead of using an array or two vars
 public class Vector 
 {
 	public double x;
 	public double y;
 	
+	//basic constructor
 	public Vector( )
 	{
 		x = 0;
@@ -16,6 +18,7 @@ public class Vector
 		this.y =y;
 	}
 	
+	//basic setters and getters
 	public double getX()
 	{
 		return x;

@@ -2,6 +2,7 @@ package GameStates;
 
 import java.awt.Graphics;
 
+//Abstract class for all the possible states
 public abstract class gameStates 
 {
 	protected gameStateManager gsm;
