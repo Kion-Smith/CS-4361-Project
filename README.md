@@ -1,4 +1,4 @@
-#Simple Raycast shooter
+##Simple Raycast shooter
 This game is inspired by video games like [Wolfenstein 3D](https://en.wikipedia.org/wiki/Wolfenstein_3D) and [Doom](https://en.wikipedia.org/wiki/Doom_(1993_video_game)), both of which utilize the [raycasting](https://en.wikipedia.org/wiki/Ray_casting) technique to create a 3D world based of a 2D grpahics and map
 
 ##Project Setup
